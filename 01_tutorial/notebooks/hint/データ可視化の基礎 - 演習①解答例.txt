@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# データの読み込みと前処理
+df = pd.read_csv('../data/raw/cafe_customers.csv')
+df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+df['Hour'] = df['Timestamp'].dt.hour
+
+# 1. 営業時間（7:00-21:00）でフィルタリング
+business_hours = df[(df['Hour'] >= 7) & (df['Hour'] <= 21)]
+
+# 2. 時間帯別の平均客数を計算
+hourly_avg = business_hours.groupby('Hour')['Customers'].mean()
+
+# 3. 可視化（棒グラフ）
+plt.figure(figsize=(12, 6))
+plt.bar(hourly_avg.index, hourly_avg.values, color='skyblue', edgecolor='navy')
+plt.title('Average Customer Count by Hour (Business Hours: 7-21)', fontsize=14, fontweight='bold')
+plt.xlabel('Hour of Day')
+plt.ylabel('Average Number of Customers')
+plt.xticks(range(7, 22))
+plt.grid(True, alpha=0.3, axis='y')
+plt.tight_layout()
+plt.show()

@@ -1,0 +1,18 @@
+import pandas as pd
+
+# データの読み込みと前処理
+df = pd.read_csv('../data/raw/cafe_customers.csv')
+df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+df['Hour'] = df['Timestamp'].dt.hour
+
+# 1. 営業時間（7:00-21:00）でフィルタリング
+business_hours = df[(df['Hour'] >= 7) & (df['Hour'] <= 21)]
+
+# 2. Timestampをインデックスに設定
+business_hours_indexed = business_hours.set_index('Timestamp')
+
+# 3. resample('H')で1時間ごとに集約し、平均客数を計算
+hourly_avg = business_hours_indexed.resample('H')['Customers'].mean()
+
+print("営業時間内の1時間ごとの平均客数:")
+print(hourly_avg.head(24))

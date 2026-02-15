@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# データの読み込みと前処理
+df = pd.read_csv('../data/raw/cafe_customers.csv')
+df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+df['WeekdayName'] = df['Timestamp'].dt.day_name()
+
+# 曜日別の平均客数を計算（曜日順にソート）
+day_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+daily_avg = df.groupby('WeekdayName')['Customers'].mean().reindex(day_order)
+
+# 可視化（棒グラフ）
+plt.figure(figsize=(10, 6))
+colors = ['steelblue'] * 5 + ['coral'] * 2  # 平日と週末で色分け
+plt.bar(daily_avg.index, daily_avg.values, color=colors, edgecolor='black')
+plt.title('Average Customer Count by Day of Week', fontsize=14, fontweight='bold')
+plt.xlabel('Day of Week')
+plt.ylabel('Average Number of Customers')
+plt.xticks(rotation=45)
+plt.grid(True, alpha=0.3, axis='y')
+plt.tight_layout()
+plt.show()
