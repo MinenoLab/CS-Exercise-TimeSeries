@@ -15,7 +15,6 @@ CS-Exercise-TimeSeries/
 ├── 01_tutorial/
 │   ├── README.md
 │   ├── data/
-│   │   ├── .gen_cafe-customers_data.py
 │   │   └── raw/
 │   └── notebooks/
 │       ├── 01_pandas_basics.ipynb

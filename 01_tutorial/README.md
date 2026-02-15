@@ -10,10 +10,6 @@ Pythonの主要なライブラリである`pandas`，`matplotlib`，`scikit-lear
 - 時系列データを機械学習モデルで扱うための前処理（特徴量エンジニアリング）を理解する．
 - `scikit-learn`を用いて予測モデルを構築し，その精度を評価する手法を習得する．
 
-## ディレクトリ構成
-- /data: チュートリアルで使用するサンプルデータセットを格納するディレクトリ
-- /notebooks: 学習用のJupyter Notebookを格納するディレクトリ
-
 ## データセット
 本チュートリアルでは，以下のデータセットを使用します．
 - `cafe_customers.csv`: 30分ごとのカフェの顧客数記録
@@ -22,14 +18,15 @@ Pythonの主要なライブラリである`pandas`，`matplotlib`，`scikit-lear
 
 ## 学習の進め方
 `notebooks`ディレクトリ内のJupyter Notebookを上から順に実行し，内容を理解しながら進めてください．
-各Notebookには，解説と演習問題が含まれています．
+Step 1とStep 2では，学習用ノートブックで基礎を学んだ後，演習用ノートブック（`01ex_`，`02ex_`）で理解を深めることができます．
+演習でつまずいた場合は，`hint`ディレクトリ内の解答例を参考にしてください．
 
-**Step 1:** `01_pandas_basics.ipynb`
+**Step 1:** `01_pandas_basics.ipynb` →  `01ex_pandas_basics.ipynb`（演習）
 
 `pandas`の基本操作，CSVファイルの読み込み，データフレームの操作方法を学びます．
 特に，時系列データを扱う上で不可欠な`datetime`型への変換と，それを用いたデータの抽出，集計方法を重点的に扱います．
 
-**Step 2:** `02_visualization_basics.ipynb`
+**Step 2:** `02_visualization_basics.ipynb` → `02ex_visualization_basics.ipynb`（演習）
 
 `matplotlib`と`seaborn`ライブラリを用いて，データを可視化する基本的な方法を学びます．
 折れ線グラフによる時系列推移の可視化や，ヒストグラム，散布図を用いたデータ分布の確認方法を習得します．
