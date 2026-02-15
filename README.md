@@ -40,7 +40,7 @@ CS-Exercise-TimeSeries/
 ## 🚀 学習の進め方
 
 ### Step 1: 基礎編（01_tutorial）
-詳細は [`01_tutorial/README.md`](https://github.com/MineLab/CS-Exercise-TimeSeries/tree/main/01_tutorial) を参照してください．
+詳細は [`01_tutorial/README.md`](https://github.com/MinenoLab/CS-Exercise-TimeSeries/tree/main/01_tutorial) を参照してください．
 
 ### Step 2: 実践編（02_competition）
-詳細は [`02_competition/README.md`](https://github.com/MineLab/CS-Exercise-TimeSeries/tree/main/02_competition) を参照してください．
+詳細は [`02_competition/README.md`](https://github.com/MinenoLab/CS-Exercise-TimeSeries/tree/main/02_competition) を参照してください．
